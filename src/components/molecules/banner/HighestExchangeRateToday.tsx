@@ -10,7 +10,7 @@ export const HighestExchagengeRateToday = () => {
   const { pairJoined } = useCicadaContext();
   const t = useTranslation();
 
-  const { data: historicData } = useCicadaHistorical(pairJoined);
+  const { data: historicData, isLoading } = useCicadaHistorical(pairJoined);
 
   const rate = useMemo(() => {
     if (!historicData) return 0;
@@ -19,7 +19,7 @@ export const HighestExchagengeRateToday = () => {
   }, [historicData]);
 
   return (
-    <DataLabel label={t("highestExchagengeRateToday")}>
+    <DataLabel loading={isLoading} label={t("highestExchagengeRateToday")}>
       <NumberDiff value={rate} />
     </DataLabel>
   );

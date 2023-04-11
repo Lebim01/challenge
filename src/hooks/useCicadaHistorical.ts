@@ -7,6 +7,7 @@ export const useCicadaHistorical = (pair?: string) => {
     ["cicadaHistorical", pair],
     async () => {
       const response = await fetch(`${CICADA_HISTORICAL_ENDPOINT}/${pair}`);
+      if (!response.ok) throw new Error(response.statusText);
       return (await response.json()) as CicadaHistorical;
     },
     { enabled: !!pair }

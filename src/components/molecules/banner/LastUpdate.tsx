@@ -9,7 +9,7 @@ export const LastUpdate = () => {
   const { pairJoined } = useCicadaContext();
   const t = useTranslation();
 
-  const { data: historicData } = useCicadaHistorical(pairJoined);
+  const { data: historicData, isLoading } = useCicadaHistorical(pairJoined);
 
   const rate = useMemo(() => {
     if (!historicData) return "00:00:00";
@@ -17,5 +17,9 @@ export const LastUpdate = () => {
     return historicData["Meta Data"]["5. Last Refreshed"];
   }, [historicData]);
 
-  return <DataLabel label={t("lastUpdate")}>{rate}</DataLabel>;
+  return (
+    <DataLabel loading={isLoading} label={t("lastUpdate")}>
+      {rate}
+    </DataLabel>
+  );
 };

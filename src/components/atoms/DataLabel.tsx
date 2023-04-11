@@ -1,9 +1,12 @@
+import { Spinner } from "./Spinner";
+
 type Props = {
   children: React.ReactNode;
   label: string;
   underline?: boolean;
   position?: "center" | "right" | "left";
   className?: string;
+  loading?: boolean;
 };
 
 export const DataLabel = ({
@@ -12,6 +15,7 @@ export const DataLabel = ({
   underline,
   position = "right",
   className,
+  loading,
 }: Props) => {
   return (
     <div
@@ -30,7 +34,7 @@ export const DataLabel = ({
       >
         {label}
       </label>
-      {children}
+      {!loading ? children : <Spinner />}
     </div>
   );
 };
