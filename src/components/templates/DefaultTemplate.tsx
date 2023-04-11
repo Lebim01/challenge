@@ -1,17 +1,14 @@
-"use client";
-
-import { useCicada } from "@/hooks/useCicada";
-import { useState } from "react";
-import { QueryClient, QueryClientProvider } from "react-query";
+import { PairMenu } from "../organisms/PairMenu";
 
 export const DefaultTemplate = ({
   children,
 }: {
   children: React.ReactNode;
 }) => {
-  const [queryClient] = useState(() => new QueryClient());
-  useCicada();
   return (
-    <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+    <main className="px-12 py-6">
+      <PairMenu />
+      {children}
+    </main>
   );
 };
