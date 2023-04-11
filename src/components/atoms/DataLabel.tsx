@@ -3,6 +3,7 @@ type Props = {
   label: string;
   underline?: boolean;
   position?: "center" | "right" | "left";
+  className?: string;
 };
 
 export const DataLabel = ({
@@ -10,6 +11,7 @@ export const DataLabel = ({
   children,
   underline,
   position = "right",
+  className,
 }: Props) => {
   return (
     <div
@@ -19,10 +21,12 @@ export const DataLabel = ({
           : position === "left"
           ? "items-start"
           : "items-end"
-      }`}
+      } ${className}`}
     >
       <label
-        className={`text-xs pb-1 text-textMuted ${underline ? "border-b" : ""}`}
+        className={`text-xs pb-1 select-none text-textMuted ${
+          underline ? "border-b" : ""
+        }`}
       >
         {label}
       </label>

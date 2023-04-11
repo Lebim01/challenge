@@ -1,4 +1,7 @@
 {
   "currencyPair": "Currency Pair",
-  "currentExchangeRateValue": "Current Exchange-Rate Value"
+  "currentExchangeRateValue": "Current Exchange-Rate Value",
+  "highestExchagengeRateToday": "Highest Exchange-Rate Today",
+  "lowestExchangeRateToday": "Lowest Exchange-Rate Today",
+  "lastUpdate": "Last Update"
 }
