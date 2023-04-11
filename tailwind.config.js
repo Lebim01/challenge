@@ -12,7 +12,9 @@ module.exports = {
     secondary:'#202837',
     highlight:'#2680EB',
     text:'#FFFFFF',
-    textmuted:'#909090',
+    textMuted:'#909090',
+    content:'#000000',
+    contentBorder:'#7B7B7B',
     numbers:{
       correct:'#00FFC4',
       incorrect:'#F56565',
