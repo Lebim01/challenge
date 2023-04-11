@@ -5,6 +5,7 @@ import ns1 from "./locales/en/ns1.json";
 
 declare module "i18next" {
   // Extend CustomTypeOptions
+  // eslint-disable-next-line no-unused-vars
   interface CustomTypeOptions {
     // custom namespace type, if you changed it
     defaultNS: "ns1";
