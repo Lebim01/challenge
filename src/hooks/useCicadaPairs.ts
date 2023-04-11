@@ -1,5 +1,5 @@
 import { CicadaPair } from "@/types";
-import { CICADA_PAIRS_ENDPOINT } from "@/const/cicadaEndpoint";
+import { CICADA_PAIRS_ENDPOINT } from "@/const/cicadaEndpoints";
 import { useQuery } from "react-query";
 
 export const endpointsKey = "endpoints";

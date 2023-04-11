@@ -6,10 +6,14 @@ import { DataLabel } from "../atoms/DataLabel";
 import { useCicadaContext } from "@/context/CicadaContext";
 import { NumberDiff } from "../atoms/NumberDiff";
 import { Line } from "../atoms/Line";
+import { HighestExchagengeRateToday } from "../molecules/banner/HighestExchangeRateToday";
+import { LowestExchagengeRateToday } from "../molecules/banner/LowestExchangeRateToday";
+import { LastUpdate } from "../molecules/banner/LastUpdate";
 
 export const BannerData = () => {
-  const [t] = useTranslation("en", "ns1");
   const { pair } = useCicadaContext();
+  const t = useTranslation("en", "ns1");
+
   return (
     <Box border className="flex px-2 p-3 w-full">
       <div className="flex justify-between flex-grow">
@@ -19,20 +23,14 @@ export const BannerData = () => {
       </div>
       <div className="flex gap-4">
         <DataLabel label={t("currentExchangeRateValue")}>
-          <NumberDiff value={0} diff={1} />
+          <NumberDiff glow value={0} diff={1} />
         </DataLabel>
         <Line />
-        <DataLabel label={t("highestExchagengeRateToday")}>
-          <NumberDiff value={0} diff={1} />
-        </DataLabel>
+        <HighestExchagengeRateToday />
         <Line />
-        <DataLabel label={t("lowestExchangeRateToday")}>
-          <NumberDiff value={0} diff={1} />
-        </DataLabel>
+        <LowestExchagengeRateToday />
         <Line />
-        <DataLabel label={t("lastUpdate") + " (UTC)"}>
-          <NumberDiff value={0} diff={1} />
-        </DataLabel>
+        <LastUpdate />
       </div>
     </Box>
   );

@@ -3,7 +3,7 @@
 import { CICADA_WS_ENDPOINT } from "@/const/cicadaEndpoint";
 import { useEffect } from "react";
 
-export const useCicada = () => {
+export const useCicadaSub = () => {
   useEffect(() => {
     const webSocket = new WebSocket(CICADA_WS_ENDPOINT);
     webSocket.onopen = () => {

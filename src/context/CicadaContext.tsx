@@ -3,6 +3,8 @@ import { createContext, useContext, useEffect, useState } from "react";
 
 export type CicadaContextState = {
   pair?: string;
+  pairJoined?: string;
+  // eslint-disable-next-line no-unused-vars
   setPair: (pair: string) => void;
 };
 
@@ -33,6 +35,7 @@ export const CicadaContextProvider = ({
     <CicadaContext.Provider
       value={{
         pair,
+        pairJoined: pair?.replace("-", ""),
         setPair,
       }}
     >
