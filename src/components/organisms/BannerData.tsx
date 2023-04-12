@@ -21,7 +21,9 @@ export const BannerData = () => {
   return (
     <div className="flex flex-col gap-2">
       {(historicError || subError) && (
-        <ErrorLabel>We couldn&apos;t today&apos;s data for {pair}</ErrorLabel>
+        <ErrorLabel>
+          We couldn&apos;t get today&apos;s data for {pair}
+        </ErrorLabel>
       )}
 
       <Box border className="flex px-2 p-3 w-full">

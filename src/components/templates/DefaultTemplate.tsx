@@ -1,4 +1,6 @@
 import { BannerData } from "../organisms/BannerData";
+import { DailyTrendTable } from "../organisms/DailyTrendTable";
+import { HistoricPricesTable } from "../organisms/HistoricPricesTable";
 import { PairMenu } from "../organisms/PairMenu";
 
 export const DefaultTemplate = ({
@@ -11,6 +13,15 @@ export const DefaultTemplate = ({
       <div className="flex flex-col gap-9">
         <PairMenu />
         <BannerData />
+      </div>
+
+      <div className="flex justify-between gap-9">
+        <div className="w-1/2">
+          <HistoricPricesTable />
+        </div>
+        <div className="w-1/2">
+          <DailyTrendTable />
+        </div>
       </div>
 
       {children}

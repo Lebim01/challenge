@@ -28,7 +28,7 @@ export const NumberDiff = ({ diff = 0, value, glow }: Props) => {
           : "text-text"
       }`}
     >
-      {value}
+      {(+value).toFixed(5)}
     </span>
   );
 };
