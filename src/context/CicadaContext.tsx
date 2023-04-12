@@ -1,15 +1,24 @@
 import { useCicadaPairs } from "@/hooks/useCicadaPairs";
-import { createContext, useContext, useEffect, useState } from "react";
+import {
+  Dispatch,
+  SetStateAction,
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 
 export type CicadaContextState = {
   pair?: string;
   pairJoined?: string;
-  // eslint-disable-next-line no-unused-vars
-  setPair: (pair: string) => void;
+  setPair: Dispatch<SetStateAction<string | undefined>>;
+  invalidPairs?: string[];
+  setInvalidPairs: Dispatch<SetStateAction<string[]>>;
 };
 
 export const CicadaContext = createContext<CicadaContextState>({
   setPair: () => {},
+  setInvalidPairs: () => {},
 });
 
 export const useCicadaContext = () => {
@@ -23,6 +32,7 @@ export const CicadaContextProvider = ({
 }) => {
   const { data: pairsAvailable } = useCicadaPairs();
   const [pair, setPair] = useState<string>();
+  const [invalidPairs, setInvalidPairs] = useState<string[]>([]);
 
   useEffect(() => {
     // select the first pair if none is selected
@@ -37,6 +47,8 @@ export const CicadaContextProvider = ({
         pair,
         pairJoined: pair?.replace("-", ""),
         setPair,
+        invalidPairs,
+        setInvalidPairs,
       }}
     >
       {children}

@@ -6,7 +6,7 @@ import { useCicadaContext } from "@/context/CicadaContext";
 
 export const PairMenu = () => {
   const pairs = useCicadaPairs();
-  const { setPair, pair: selectedPair } = useCicadaContext();
+  const { setPair, pair: selectedPair, invalidPairs } = useCicadaContext();
 
   const handleClick = (pairId: string) => {
     setPair(pairId);
@@ -18,6 +18,7 @@ export const PairMenu = () => {
         <Tab
           onClick={handleClick}
           id={pair.id}
+          invalid={invalidPairs?.includes(pair.label.replace("-", ""))}
           label={pair.label}
           key={pair.id}
           selected={pair.label === selectedPair}

@@ -1,6 +1,7 @@
 "use client";
 
 import { CICADA_WS_ENDPOINT } from "@/const/cicadaEndpoints";
+import { useCicadaContext } from "@/context/CicadaContext";
 import { CicadaSubscriptionData } from "@/types";
 import { useEffect, useState } from "react";
 import { useQuery, useQueryClient } from "react-query";
@@ -10,6 +11,7 @@ export const cicadaSubKey = "cicadaSub";
 export const useCicadaSub = (pair?: string) => {
   const [error, setError] = useState<boolean>(false);
   const queryClient = useQueryClient();
+  const { setInvalidPairs } = useCicadaContext();
   useEffect(() => {
     const data = queryClient.getQueryData<CicadaSubscriptionData>(cicadaSubKey);
     if (data) return;
@@ -36,6 +38,7 @@ export const useCicadaSub = (pair?: string) => {
           console.error(
             "Cicada WebSocket reconnection failed. Please refresh the page."
           );
+          setInvalidPairs((prev) => [...prev, pair]);
           setError(true);
           return;
         }
