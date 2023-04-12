@@ -14,9 +14,9 @@ export const HistoricPricesTable = () => {
   const tableData = Object.values(data?.["Time Series FX (Daily)"] || {}).map(
     (item) => {
       return {
-        Date: data?.["Meta Data"]["5. Last Refreshed"] || "loading",
-        High: item["2. high"],
-        Low: item["3. low"],
+        [t("date")]: data?.["Meta Data"]["5. Last Refreshed"] || "loading",
+        [t("high")]: item["2. high"],
+        [t("low")]: item["3. low"],
       };
     }
   );
@@ -26,7 +26,7 @@ export const HistoricPricesTable = () => {
       data={tableData}
       title={t("historicPrices")}
       render={(key, value) => {
-        if (key === "Date") {
+        if (key === t("date")) {
           return `${value}`;
         }
         return <NumberDiff value={+value} />;

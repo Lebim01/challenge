@@ -17,6 +17,7 @@ export const useCicadaSub = (pair?: string) => {
     if (data) return;
     let reconnectionTries = 0;
     const maxReconnectionTries = 2;
+    let pairReconnection: string;
     const connect = () => {
       if (!pair) {
         return undefined;
@@ -38,12 +39,13 @@ export const useCicadaSub = (pair?: string) => {
           console.error(
             "Cicada WebSocket reconnection failed. Please refresh the page."
           );
-          setInvalidPairs((prev) => [...prev, pair]);
+          setInvalidPairs((prev) => [...prev, pairReconnection]);
           setError(true);
           return;
         }
         setTimeout(() => {
           connect();
+          pairReconnection = pair;
           reconnectionTries++;
         }, 1000);
       };

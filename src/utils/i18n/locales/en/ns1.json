@@ -5,5 +5,11 @@
   "lowestExchangeRateToday": "Lowest Exchange-Rate Today",
   "lastUpdate": "Last Update",
   "historicPrices": "Historic Prices",
-  "dailyTrend": "Daily Trend"
+  "dailyTrend": "Daily Trend",
+  "date": "Date",
+  "high": "High",
+  "low": "Low",
+  "open": "Open",
+  "close": "Close",
+  "difference": "Difference"
 }

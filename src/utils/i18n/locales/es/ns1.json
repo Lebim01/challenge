@@ -1,0 +1,15 @@
+{
+  "currencyPair": "Par de Divisas",
+  "currentExchangeRateValue": "Valor actual del tipo de cambio",
+  "highestExchagengeRateToday": "Tipo de cambio más alto hoy",
+  "lowestExchangeRateToday": "Tipo de cambio más bajo hoy",
+  "lastUpdate": "Última actualización",
+  "historicPrices": "Precios Historicos",
+  "dailyTrend": "Tendencia Diaria",
+  "date": "Fecha",
+  "high": "Alto",
+  "low": "Bajo",
+  "open": "Abierto",
+  "close": "Cerrado",
+  "difference": "Diferencia"
+}

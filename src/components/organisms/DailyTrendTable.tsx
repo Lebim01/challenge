@@ -14,10 +14,10 @@ export const DailyTrendTable = () => {
   const tableData = Object.values(data?.["Time Series FX (Daily)"] || {}).map(
     (item) => {
       return {
-        Date: data?.["Meta Data"]["5. Last Refreshed"] || "loading",
-        Open: item["1. open"],
-        Close: item["4. close"],
-        Difference: +item["4. close"] - +item["1. open"],
+        [t("date")]: data?.["Meta Data"]["5. Last Refreshed"] || "loading",
+        [t("open")]: item["1. open"],
+        [t("close")]: item["4. close"],
+        [t("difference")]: +item["4. close"] - +item["1. open"],
       };
     }
   );
@@ -27,10 +27,10 @@ export const DailyTrendTable = () => {
       data={tableData}
       title={t("dailyTrend")}
       render={(key, value) => {
-        if (key === "Date") {
+        if (key === t("date")) {
           return `${value}`;
         }
-        if (key === "Difference") {
+        if (key === t("difference")) {
           return <NumberDiff value={+value} diff={+value} />;
         }
         return <NumberDiff value={+value} />;

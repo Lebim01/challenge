@@ -9,7 +9,10 @@ export const defaultNS: AvailableNamespaces = "ns1";
 
 export type l18Values = Namespace<"ns1">;
 
-export const getOptions = (lng = fallbackLng, ns = defaultNS) => {
+export const getOptions = (
+  lng: AvailableLanguages = fallbackLng,
+  ns = defaultNS
+) => {
   return {
     // debug: true,
     supportedLngs: languages,

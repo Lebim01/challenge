@@ -40,10 +40,10 @@ export const Table = <T extends AcceptedData<B>, B extends string>({
           </GridItem>
         ))}
       </GridTable>
-      <Box className="pl-4 pr-1 pt-2 min-h-[150px]">
+      <Box className="pl-4 pr-1 pt-2 min-h-[164px]">
         {!loading ? (
           <GridTable
-            className="max-h-96 overflow-y-auto"
+            className="max-h-[164px] overflow-y-auto text-sm"
             size={categories.length}
           >
             {data.map((item, index) =>
@@ -54,7 +54,7 @@ export const Table = <T extends AcceptedData<B>, B extends string>({
                   col={index2 + 1}
                   size={categories.length}
                   key={`value-${index}-${index2}`}
-                  className="pr-2"
+                  className="pr-2 border-b border-b-text whitespace-nowrap py-1"
                 >
                   {render
                     ? render(key as keyof T, value as string | number)

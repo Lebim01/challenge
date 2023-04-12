@@ -22,10 +22,8 @@ i18next
   )
   .init(getOptions());
 
-export function useTranslation(
-  lng: AvailableLanguages = "en",
-  ns: AvailableNamespaces = "ns1"
-) {
+export function useTranslation(lng: AvailableLanguages = "en") {
+  const ns: AvailableNamespaces = "ns1";
   if (i18next.resolvedLanguage !== lng) i18next.changeLanguage(lng);
   return useTranslationOrg(ns)[0];
 }

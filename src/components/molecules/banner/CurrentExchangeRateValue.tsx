@@ -6,7 +6,7 @@ import { useCicadaSub } from "@/hooks/useCicadaSub";
 import { getTodayHistorical } from "@/utils/api/todayHistorical";
 import { useTranslation } from "@/utils/i18n/useTranslation";
 
-export const CurrentExhcangeRateValue = () => {
+export const CurrentExchangeRateValue = () => {
   const { pairJoined } = useCicadaContext();
   const { isLoading, data } = useCicadaSub(pairJoined);
   const { data: historicalData } = useCicadaHistorical(pairJoined);

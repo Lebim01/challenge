@@ -2,6 +2,7 @@ import { BannerData } from "../organisms/BannerData";
 import { DailyTrendTable } from "../organisms/DailyTrendTable";
 import { HistoricPricesTable } from "../organisms/HistoricPricesTable";
 import { PairMenu } from "../organisms/PairMenu";
+import { ChangeLanguage } from "../molecules/lang/ChangeLanguage";
 
 export const DefaultTemplate = ({
   children,
@@ -11,7 +12,9 @@ export const DefaultTemplate = ({
   return (
     <main className="px-12 py-6 flex flex-col gap-14">
       <div className="flex flex-col gap-9">
-        <PairMenu />
+        <div className="flex justify-between">
+          <PairMenu /> <ChangeLanguage />
+        </div>
         <BannerData />
       </div>
 
