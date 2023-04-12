@@ -25,3 +25,8 @@ export type CicadaHistorical = {
     CicadaTimeSerie
   >;
 };
+
+export type CicadaSubscriptionData = {
+  pair: string;
+  value: number;
+};

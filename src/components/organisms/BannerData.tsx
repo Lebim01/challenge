@@ -11,6 +11,7 @@ import { LowestExchagengeRateToday } from "../molecules/banner/LowestExchangeRat
 import { LastUpdate } from "../molecules/banner/LastUpdate";
 import { useCicadaHistorical } from "@/hooks/useCicadaHistorical";
 import { ErrorLabel } from "../atoms/ErrorLabel";
+import { CurrentExhcangeRateValue } from "../molecules/banner/CurrentExchangeRateValue";
 
 export const BannerData = () => {
   const { pair, pairJoined } = useCicadaContext();
@@ -28,9 +29,7 @@ export const BannerData = () => {
           </DataLabel>
         </div>
         <div className="flex gap-4">
-          <DataLabel label={t("currentExchangeRateValue")}>
-            <NumberDiff glow value={0} diff={1} />
-          </DataLabel>
+          <CurrentExhcangeRateValue />
 
           {!historicError && (
             <>
