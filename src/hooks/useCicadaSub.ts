@@ -36,7 +36,6 @@ export const useCicadaSub = (pair?: string) => {
           console.error(
             "Cicada WebSocket reconnection failed. Please refresh the page."
           );
-          queryClient.removeQueries(cicadaSubKey);
           setError(true);
           return;
         }
@@ -64,6 +63,8 @@ export const useCicadaSub = (pair?: string) => {
     return () => {
       webSocket?.close();
       queryClient.removeQueries(cicadaSubKey);
+      queryClient.cancelQueries(cicadaSubKey);
+      setError(false);
     };
   }, [pair, queryClient]);
 
