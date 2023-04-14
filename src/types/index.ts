@@ -18,12 +18,16 @@ export interface CicadaTimeSerie {
   "4. close": string;
 }
 
+export type CicadaTimeSerieDate = `${number}-${number}-${number}`;
+
+export type CicadaTimeSerieRecord = Record<
+  CicadaTimeSerieDate,
+  CicadaTimeSerie
+>;
+
 export type CicadaHistorical = {
   "Meta Data": CicadaMetaData;
-  "Time Series FX (Daily)": Record<
-    `${number}-${number}-${number}`,
-    CicadaTimeSerie
-  >;
+  "Time Series FX (Daily)": CicadaTimeSerieRecord;
 };
 
 export type CicadaSubscriptionData = {
