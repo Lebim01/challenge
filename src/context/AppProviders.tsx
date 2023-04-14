@@ -1,14 +1,21 @@
 "use client";
 
-import { QueryClient, QueryClientProvider } from "react-query";
+import { QueryClientProvider } from "react-query";
 import { CicadaContextProvider } from "./CicadaContext";
 
 import { queryClient } from "@/utils/queryClient";
+import { AvailableLanguages } from "@/utils/i18n/settings";
 
-export const AppProviders = ({ children }: { children: React.ReactNode }) => {
+export const AppProviders = ({
+  children,
+  lang,
+}: {
+  children: React.ReactNode;
+  lang: AvailableLanguages;
+}) => {
   return (
     <QueryClientProvider client={queryClient}>
-      <CicadaContextProvider>{children}</CicadaContextProvider>
+      <CicadaContextProvider lng={lang}>{children}</CicadaContextProvider>
     </QueryClientProvider>
   );
 };

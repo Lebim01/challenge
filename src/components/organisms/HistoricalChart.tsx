@@ -40,7 +40,10 @@ export const HistoricalChart = () => {
   const dataChart = useMemo(() => {
     const serie = Object.entries(data?.["Time Series FX (Daily)"] || {}).map(
       ([date, value]) => {
-        return { x: new Date(date), y: +value["1. open"] };
+        const median =
+          (+Number(value["2. high"]) + Number(value["3. low"])) / 2;
+
+        return { x: new Date(date), y: median };
       }
     );
     return serie;

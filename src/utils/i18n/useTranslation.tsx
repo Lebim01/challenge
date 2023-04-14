@@ -6,11 +6,8 @@ import {
   useTranslation as useTranslationOrg,
 } from "react-i18next";
 import resourcesToBackend from "i18next-resources-to-backend";
-import {
-  AvailableLanguages,
-  AvailableNamespaces,
-  getOptions,
-} from "./settings";
+import { AvailableNamespaces, getOptions } from "./settings";
+import { useCicadaContext } from "@/context/CicadaContext";
 
 i18next
   .use(initReactI18next)
@@ -22,8 +19,10 @@ i18next
   )
   .init(getOptions());
 
-export function useTranslation(lng: AvailableLanguages = "en") {
+export function useTranslation() {
+  const { lang } = useCicadaContext();
+
   const ns: AvailableNamespaces = "ns1";
-  if (i18next.resolvedLanguage !== lng) i18next.changeLanguage(lng);
+  if (i18next.resolvedLanguage !== lang) i18next.changeLanguage(lang);
   return useTranslationOrg(ns)[0];
 }

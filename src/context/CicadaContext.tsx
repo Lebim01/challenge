@@ -1,4 +1,5 @@
 import { useCicadaPairs } from "@/hooks/useCicadaPairs";
+import { AvailableLanguages } from "@/utils/i18n/settings";
 import {
   Dispatch,
   SetStateAction,
@@ -14,11 +15,13 @@ export type CicadaContextState = {
   setPair: Dispatch<SetStateAction<string | undefined>>;
   invalidPairs?: string[];
   setInvalidPairs: Dispatch<SetStateAction<string[]>>;
+  lang: AvailableLanguages;
 };
 
 export const CicadaContext = createContext<CicadaContextState>({
   setPair: () => {},
   setInvalidPairs: () => {},
+  lang: "en",
 });
 
 export const useCicadaContext = () => {
@@ -27,8 +30,10 @@ export const useCicadaContext = () => {
 
 export const CicadaContextProvider = ({
   children,
+  lng,
 }: {
   children: React.ReactNode;
+  lng: AvailableLanguages;
 }) => {
   const { data: pairsAvailable } = useCicadaPairs();
   const [pair, setPair] = useState<string>();
@@ -49,6 +54,7 @@ export const CicadaContextProvider = ({
         setPair,
         invalidPairs,
         setInvalidPairs,
+        lang: lng,
       }}
     >
       {children}

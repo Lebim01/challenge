@@ -1,6 +1,5 @@
 "use client";
 
-import { useTranslation } from "@/utils/i18n/useTranslation";
 import { Box } from "../atoms/Box";
 import { DataLabel } from "../atoms/DataLabel";
 import { useCicadaContext } from "@/context/CicadaContext";
@@ -12,6 +11,7 @@ import { useCicadaHistorical } from "@/hooks/useCicadaHistorical";
 import { ErrorLabel } from "../atoms/ErrorLabel";
 import { CurrentExchangeRateValue } from "../molecules/banner/CurrentExchangeRateValue";
 import { useCicadaSub } from "@/hooks/useCicadaSub";
+import { useTranslation } from "@/utils/i18n/useTranslation";
 
 export const BannerData = () => {
   const { pair, pairJoined } = useCicadaContext();

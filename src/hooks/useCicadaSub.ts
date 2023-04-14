@@ -28,7 +28,8 @@ export const useCicadaSub = (pair?: string) => {
         webSocket.send(JSON.stringify({ action: "subscribe", pair }));
       };
       webSocket.onclose = (ev: CloseEvent) => {
-        if (ev.code === 1000) return;
+        console.warn("Cicada WebSocket closed", ev);
+        if (!ev.reason) return;
 
         if (reconnectionTries > 0) {
           console.warn(
