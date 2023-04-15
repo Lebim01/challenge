@@ -1,3 +1,5 @@
+import { cssvar } from "@/utils/colors";
+
 type Props = {
   label: string;
   id: string;
@@ -20,13 +22,16 @@ export const Tab = ({ label, selected, onClick, invalid }: Props) => {
         selected
           ? `bg-primary ${
               invalid
-                ? " outline outline-1 outline-numbers-incorrect"
-                : "shadow-[inset_0px_1px_0px_highlight] before:shadow-[0px_0px_10px_highlight]"
+                ? "outline outline-1 outline-numbers-incorrect"
+                : "shadow-[inset_0px_1px_0px] before:shadow-[0px_0px_10px]"
             } before:content-[''] before:absolute before:w-full before:h-[2px] before:left-0 before:top-0`
-          : "bg-secondary text-textMuted shadow-[inset_0px_0px_0px_highlight] before:shadow-[0px_0px_0px_highlight]"
+          : "bg-secondary text-textMuted shadow-[inset_0px_0px_0px] before:shadow-[0px_0px_0px]"
       }`}
+      style={{
+        color: cssvar("--twc-highlight"),
+      }}
     >
-      {label}
+      <span className="text-text">{label}</span>
     </button>
   );
 };

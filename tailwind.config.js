@@ -18,38 +18,12 @@ module.exports = {
       },
     }
   },
-  plugins: [plugin(function ({ matchUtilities, theme }) {
-    matchUtilities(
-      {
-        'text-shadow': (value) => ({
-          textShadow: value,
-        }),
-      },
-      { values: theme('textShadow') }
-    )
-  }),createThemes({
+  plugins: [createThemes({
     default:{
       background:'#1A202C',
       primary:'#2D3748',
       secondary:'#202837',
-      highlight:'#2680EB',
-      text:'#FFFFFF',
-      textMuted:'#909090',
-      content:'#000000',
-      contentBorder:'#7B7B7B',
-      numbers:{
-        correct:'#00FFC4',
-        incorrect:'#F56565',
-      },
-      graphs:{
-        line:'#ECC94B'
-      }
-    },
-    default:{
-      background:'#1A202C',
-      primary:'#2D3748',
-      secondary:'#202837',
-      highlight:'#2680EB',
+      highlight:'#ffffff',
       text:'#FFFFFF',
       textMuted:'#909090',
       content:'#000000',
@@ -66,18 +40,27 @@ module.exports = {
       background: '#0f2419',
       primary: '#284035',
       secondary: '#1e3628',
-      highlight: '#64FFDA',
+      highlight: '#37fc00',
       text: '#FFFFFF',
       textMuted: '#B2B2B2',
       content: '#040806',
       contentBorder: '#4A5568',
       numbers: {
-        correct: '#00FFB3',
-        incorrect: '#FF4D4D',
+        correct: '#dbfc00',
+        incorrect: '#fc4300',
       },
       graphs: {
         line: '#2ECC71',
       },
     }
-  })],
+  }),plugin(function ({ matchUtilities, theme }) {
+    matchUtilities(
+      {
+        'text-shadow': (value) => ({
+          textShadow: value,
+        }),
+      },
+      { values: theme('textShadow') }
+    )
+  }),],
 }
