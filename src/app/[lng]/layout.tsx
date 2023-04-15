@@ -24,7 +24,7 @@ export default function RootLayout({
   params: { lng: AvailableLanguages };
 }) {
   return (
-    <html lang={lng} dir={dir(lng)} className="theme-default">
+    <html lang={lng} dir={dir(lng)} className="theme-green">
       <body className={`bg-background text-text ${inter.className}`}>
         <AppProviders lang={lng}>
           <DefaultTemplate>{children}</DefaultTemplate>

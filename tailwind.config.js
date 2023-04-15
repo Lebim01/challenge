@@ -44,6 +44,40 @@ module.exports = {
       graphs:{
         line:'#ECC94B'
       }
+    },
+    default:{
+      background:'#1A202C',
+      primary:'#2D3748',
+      secondary:'#202837',
+      highlight:'#2680EB',
+      text:'#FFFFFF',
+      textMuted:'#909090',
+      content:'#000000',
+      contentBorder:'#7B7B7B',
+      numbers:{
+        correct:'#00FFC4',
+        incorrect:'#F56565',
+      },
+      graphs:{
+        line:'#ECC94B'
+      }
+    },
+    green:{
+      background: '#0f2419',
+      primary: '#284035',
+      secondary: '#1e3628',
+      highlight: '#64FFDA',
+      text: '#FFFFFF',
+      textMuted: '#B2B2B2',
+      content: '#040806',
+      contentBorder: '#4A5568',
+      numbers: {
+        correct: '#00FFB3',
+        incorrect: '#FF4D4D',
+      },
+      graphs: {
+        line: '#2ECC71',
+      },
     }
   })],
 }

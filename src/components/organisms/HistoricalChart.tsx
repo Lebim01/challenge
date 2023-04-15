@@ -18,10 +18,6 @@ import {
 import "chartjs-adapter-moment";
 import { Line } from "react-chartjs-2";
 import { Box } from "../atoms/Box";
-import resolveConfig from "tailwindcss/resolveConfig";
-import tailwindConfig from "../../../tailwind.config.js";
-
-const fullConfig = resolveConfig(tailwindConfig);
 
 ChartJS.register(
   CategoryScale,
@@ -48,8 +44,6 @@ export const HistoricalChart = () => {
     );
     return serie;
   }, [data]);
-
-  console.log(cssvar("--twc-graphs-line"));
 
   return (
     <Box className="min-h-[512px] h-full p-3">
@@ -97,6 +91,7 @@ export const HistoricalChart = () => {
 };
 
 function cssvar(name: string, alpha = 1) {
+  if (typeof window === "undefined") return "rgb(0,0,0)";
   const computedName = getComputedStyle(
     document.documentElement
   ).getPropertyValue(name);
@@ -120,9 +115,4 @@ const HSLToRGB = (h: number, s: number, l: number) => {
   const f = (n: number) =>
     l - a * Math.max(-1, Math.min(k(n) - 3, Math.min(9 - k(n), 1)));
   return [255 * f(0), 255 * f(8), 255 * f(4)];
-};
-
-const hex2rgba = (hex: string, alpha = 1) => {
-  const [r, g, b] = hex.match(/\w\w/g)!.map((x) => parseInt(x, 16));
-  return `rgba(${r},${g},${b},${alpha})`;
 };
