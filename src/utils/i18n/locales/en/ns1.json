@@ -11,5 +11,7 @@
   "low": "Low",
   "open": "Open",
   "close": "Close",
-  "difference": "Difference"
+  "difference": "Difference",
+  "English": "English",
+  "Spanish": "Spanish"
 }
