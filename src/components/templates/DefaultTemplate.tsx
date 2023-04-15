@@ -5,7 +5,11 @@ import { PairMenu } from "../organisms/PairMenu";
 import { ChangeLanguage } from "../molecules/lang/ChangeLanguage";
 import { HistoricalChart } from "../organisms/HistoricalChart";
 
-export const DefaultTemplate = ({}: { children: React.ReactNode }) => {
+export const DefaultTemplate = ({
+  children,
+}: {
+  children: React.ReactNode;
+}) => {
   return (
     <main className="px-12 py-6 pb-[10px] flex flex-col gap-14 h-full overflow-auto">
       <div className="flex flex-col gap-9">
@@ -25,6 +29,7 @@ export const DefaultTemplate = ({}: { children: React.ReactNode }) => {
       </div>
 
       <HistoricalChart />
+      {children}
     </main>
   );
 };
