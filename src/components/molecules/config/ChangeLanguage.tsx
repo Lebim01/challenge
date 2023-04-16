@@ -1,9 +1,6 @@
-"use client";
-
 import { useCicadaContext } from "@/context/CicadaContext";
 import { AvailableLanguages } from "@/utils/i18n/settings";
 import { useTranslation } from "@/utils/i18n/useTranslation";
-import { useRouter } from "next/navigation";
 
 export const ChangeLanguage = () => {
   const t = useTranslation();
@@ -22,18 +19,15 @@ const LanguageItem = ({
   lang: AvailableLanguages;
   label: string;
 }) => {
-  const router = useRouter();
   const { lang: currentLang } = useCicadaContext();
   return (
-    <button
+    <a
       className={`${
         lang === currentLang ? "opacity-100" : "opacity-50"
       } transition-opacity`}
-      onClick={() => {
-        router.push(`/${lang}`);
-      }}
+      href={`${lang}`}
     >
       {label}
-    </button>
+    </a>
   );
 };

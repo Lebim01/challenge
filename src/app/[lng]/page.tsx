@@ -1,6 +1,7 @@
 "use client";
 
-import { ChangeLanguage } from "@/components/molecules/lang/ChangeLanguage";
+import { ChangeLanguage } from "@/components/molecules/config/ChangeLanguage";
+import { ChangeTheme } from "@/components/molecules/config/ChangeTheme";
 import { BannerData } from "@/components/organisms/BannerData";
 import { DailyTrendTable } from "@/components/organisms/DailyTrendTable";
 import { HistoricPricesTable } from "@/components/organisms/HistoricPricesTable";
@@ -12,7 +13,11 @@ export default function Home() {
     <>
       <div className="flex flex-col gap-9">
         <div className="flex justify-between">
-          <PairMenu /> <ChangeLanguage />
+          <PairMenu />{" "}
+          <div>
+            <ChangeLanguage />
+            <ChangeTheme />
+          </div>
         </div>
         <BannerData />
       </div>

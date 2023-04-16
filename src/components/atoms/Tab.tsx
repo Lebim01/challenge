@@ -1,3 +1,5 @@
+"use client";
+
 import { cssvar } from "@/utils/colors";
 
 type Props = {

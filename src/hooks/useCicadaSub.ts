@@ -23,6 +23,7 @@ export const useCicadaSub = (pair?: string) => {
       const webSocket = new WebSocket(CICADA_WS_ENDPOINT);
       webSocket.onopen = () => {
         webSocket.send(JSON.stringify({ action: "subscribe", pair }));
+        reconnectionTries = 0;
       };
       webSocket.onclose = (ev: CloseEvent) => {
         console.warn("Cicada WebSocket closed", ev);

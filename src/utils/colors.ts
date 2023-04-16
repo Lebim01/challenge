@@ -1,8 +1,8 @@
 export const cssvar = (name: string, alpha = 1) => {
   if (typeof window === "undefined") return "rgb(0,0,0)";
-  const computedName = getComputedStyle(
-    document.documentElement
-  ).getPropertyValue(name);
+  const wrapper = document.getElementById("mainTemplate");
+  if (!wrapper) return "rgb(0,0,0)";
+  const computedName = getComputedStyle(wrapper).getPropertyValue(name);
 
   const split = computedName.split(" ");
   if (split.length < 4) return "rgb(0,0,0)";
