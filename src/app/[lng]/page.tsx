@@ -1,8 +1,7 @@
 "use client";
 
-import { ChangeLanguage } from "@/components/molecules/config/ChangeLanguage";
-import { ChangeTheme } from "@/components/molecules/config/ChangeTheme";
 import { BannerData } from "@/components/organisms/BannerData";
+import { Configuration } from "@/components/organisms/Configuration";
 import { DailyTrendTable } from "@/components/organisms/DailyTrendTable";
 import { HistoricPricesTable } from "@/components/organisms/HistoricPricesTable";
 import { HistoricalChart } from "@/components/organisms/HistoricalChart";
@@ -12,12 +11,9 @@ export default function Home() {
   return (
     <>
       <div className="flex flex-col gap-9">
-        <div className="flex flex-col md:flex-row justify-between">
+        <div className="flex flex-col md:flex-row justify-between lg:items-center">
           <PairMenu />
-          <div>
-            <ChangeLanguage />
-            <ChangeTheme />
-          </div>
+          <Configuration />
         </div>
         <BannerData />
       </div>

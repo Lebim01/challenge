@@ -5,8 +5,8 @@ import { useTranslation } from "@/utils/i18n/useTranslation";
 export const ChangeLanguage = () => {
   const t = useTranslation();
   return (
-    <div className="flex gap-2">
-      <LanguageItem lang="en" label={t("English")} />
+    <div className="flex gap-2 items-center">
+      <LanguageItem lang="en" label={t("English")} /> /
       <LanguageItem lang="es" label={t("Spanish")} />
     </div>
   );
@@ -24,7 +24,7 @@ const LanguageItem = ({
     <a
       className={`${
         lang === currentLang ? "opacity-100" : "opacity-50"
-      } transition-opacity`}
+      } transition-opacity text-sm`}
       href={`${lang}`}
     >
       {label}

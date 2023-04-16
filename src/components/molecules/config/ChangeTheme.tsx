@@ -3,26 +3,27 @@ import { Themes } from "@/utils/theme/theme";
 
 export const ChangeTheme = () => {
   return (
-    <div>
-      <ThemeItem theme="theme-default" label="Default" />
-      <ThemeItem theme="theme-green" label="Green" />
-      <ThemeItem theme="theme-yellow" label="Yellow" />
+    <div className="flex gap-2">
+      <ThemeItem theme="theme-default" color="#1A202C" />
+      <ThemeItem theme="theme-green" color="#284035" />
+      <ThemeItem theme="theme-yellow" color="#F2D492" />
     </div>
   );
 };
 
-const ThemeItem = ({ theme, label }: { theme: Themes; label: string }) => {
+const ThemeItem = ({ theme, color }: { theme: Themes; color: string }) => {
   const { theme: currentTheme, setTheme } = useCicadaContext();
   return (
     <button
       onClick={() => {
         setTheme(theme);
       }}
-      className={`${
-        theme === currentTheme ? "opacity-100" : "opacity-50"
-      } transition-opacity`}
-    >
-      {label}
-    </button>
+      className={`border border-text ${
+        theme === currentTheme ? "opacity-100 border-[2px]" : "opacity-50"
+      } transition-all w-4 h-4 rounded-full`}
+      style={{
+        backgroundColor: color,
+      }}
+    ></button>
   );
 };
