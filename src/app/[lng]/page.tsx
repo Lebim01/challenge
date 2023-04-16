@@ -12,8 +12,8 @@ export default function Home() {
   return (
     <>
       <div className="flex flex-col gap-9">
-        <div className="flex justify-between">
-          <PairMenu />{" "}
+        <div className="flex flex-col md:flex-row justify-between">
+          <PairMenu />
           <div>
             <ChangeLanguage />
             <ChangeTheme />
@@ -22,11 +22,11 @@ export default function Home() {
         <BannerData />
       </div>
 
-      <div className="flex justify-between gap-9">
-        <div className="w-1/2">
+      <div className="flex flex-col lg:flex-row justify-between gap-9">
+        <div className="lg:w-1/2">
           <HistoricPricesTable />
         </div>
-        <div className="w-1/2">
+        <div className="lg:w-1/2">
           <DailyTrendTable />
         </div>
       </div>

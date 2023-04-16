@@ -13,7 +13,7 @@ export const PairMenu = () => {
   };
 
   return (
-    <div className="flex gap-2">
+    <div className="flex gap-2 py-2 overflow-auto">
       {pairs.data?.map((pair) => (
         <Tab
           onClick={handleClick}

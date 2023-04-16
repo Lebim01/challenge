@@ -18,7 +18,7 @@ export const Tab = ({ label, selected, onClick, invalid }: Props) => {
       onClick={() => {
         onClick && onClick(label);
       }}
-      className={`px-[14px] transition-all py-4 relative before:transition-all ${
+      className={`px-[14px] transition-all py-4 relative before:transition-all whitespace-nowrap ${
         invalid ? "cursor-not-allowed opacity-40" : ""
       }  ${
         selected

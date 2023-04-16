@@ -26,7 +26,6 @@ export const useCicadaSub = (pair?: string) => {
         reconnectionTries = 0;
       };
       webSocket.onclose = (ev: CloseEvent) => {
-        console.warn("Cicada WebSocket closed", ev);
         if (!ev.reason) return;
 
         if (reconnectionTries > 0) {

@@ -26,7 +26,10 @@ export const BannerData = () => {
         </ErrorLabel>
       )}
 
-      <Box border className="flex px-2 p-3 w-full">
+      <Box
+        border
+        className="flex px-2 p-3 w-full overflow-auto whitespace-nowrap gap-3"
+      >
         <div className="flex justify-between flex-grow">
           <DataLabel label={t("currencyPair")} underline position="left">
             <span className="text-textPrimary">{pair}</span>
@@ -34,17 +37,12 @@ export const BannerData = () => {
         </div>
         <div className="flex gap-4">
           <CurrentExchangeRateValue />
-
-          {!historicError && (
-            <>
-              <Line />
-              <HighestExchagengeRateToday />
-              <Line />
-              <LowestExchagengeRateToday />
-              <Line />
-              <LastUpdate />
-            </>
-          )}
+          <Line />
+          <HighestExchagengeRateToday />
+          <Line />
+          <LowestExchagengeRateToday />
+          <Line />
+          <LastUpdate />
         </div>
       </Box>
     </div>

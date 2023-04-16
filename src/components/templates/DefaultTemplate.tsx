@@ -8,7 +8,7 @@ const DefaultTemplate_ = ({ children }: { children: React.ReactNode }) => {
   return (
     <main
       id="mainTemplate"
-      className={`px-12 py-6 pb-[10px] flex flex-col gap-14 h-full overflow-auto bg-background text-text ${theme}`}
+      className={`px-2 lg:px-12 py-6 pb-[10px] flex flex-col gap-14 h-full overflow-auto bg-background text-text ${theme}`}
     >
       {children}
     </main>

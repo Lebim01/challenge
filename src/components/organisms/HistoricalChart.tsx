@@ -47,7 +47,7 @@ export const HistoricalChart = () => {
   }, [data]);
 
   return (
-    <Box className="min-h-[512px] h-full p-3">
+    <Box className=" md:min-h-[300px] lg:min-h-[512px] h-full p-3">
       <Line
         options={{
           responsive: true,
