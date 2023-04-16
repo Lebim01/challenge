@@ -1,4 +1,9 @@
-export type Themes = "theme-default" | "theme-green" | "theme-yellow";
+export type Themes =
+  | "theme-default"
+  | "theme-green"
+  | "theme-yellow"
+  | "theme-unicorn"
+  | "theme-dynamite";
 
 export const getStorageTheme = (): Themes => {
   if (typeof window === "undefined") return "theme-default";

@@ -6,7 +6,9 @@ export const ChangeTheme = () => {
     <div className="flex gap-2">
       <ThemeItem theme="theme-default" color="#1A202C" />
       <ThemeItem theme="theme-green" color="#284035" />
-      <ThemeItem theme="theme-yellow" color="#F2D492" />
+      <ThemeItem theme="theme-yellow" color="#f7e7c0" />
+      <ThemeItem theme="theme-unicorn" color="#f790b8" />
+      <ThemeItem theme="theme-dynamite" color="#f75e27" />
     </div>
   );
 };
