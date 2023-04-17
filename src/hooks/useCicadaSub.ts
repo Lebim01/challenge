@@ -10,6 +10,7 @@ export const cicadaSubKey = "cicadaSub";
 export const useCicadaSub = (pair?: string) => {
   const [error, setError] = useState<boolean>(false);
   const queryClient = useQueryClient();
+  
   useEffect(() => {
     const data = queryClient.getQueryData<CicadaSubscriptionData>(cicadaSubKey);
     if (data) return;

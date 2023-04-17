@@ -61,6 +61,7 @@ export const CicadaContextProvider = ({
     setStorageTheme(theme);
     router.refresh();
   }, [theme, router]);
+  
   return (
     <CicadaContext.Provider
       value={{

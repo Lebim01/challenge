@@ -11,12 +11,6 @@ import { useCicadaContext } from "@/context/CicadaContext";
 
 i18next
   .use(initReactI18next)
-  .use(
-    resourcesToBackend(
-      (language: any, namespace: any) =>
-        import(`./locales/${language}/${namespace}.json`)
-    )
-  )
   .init(getOptions());
 
 export function useTranslation() {

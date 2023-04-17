@@ -1,5 +1,8 @@
 import { Namespace } from "i18next";
 
+import enLang from '@/utils/i18n/locales/en/ns1.json'
+import esLang from '@/utils/i18n/locales/es/ns1.json'
+
 export type AvailableLanguages = "en" | "es";
 export type AvailableNamespaces = "ns1";
 
@@ -21,5 +24,9 @@ export const getOptions = (
     fallbackNS: defaultNS,
     defaultNS,
     ns,
+    resources: {
+      en: {ns1: enLang},
+      es: {ns1: esLang}
+    }
   };
 };
