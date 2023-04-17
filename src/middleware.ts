@@ -1,8 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import acceptLanguage from "accept-language";
 import { fallbackLng, languages } from "@/utils/i18n/settings";
-
-acceptLanguage.languages(languages);
 
 export const config = {
   // matcher: '/:lng*'
