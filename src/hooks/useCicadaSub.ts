@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 "use client";
 
 import { CICADA_WS_ENDPOINT } from "@/const/cicadaEndpoints";
@@ -23,6 +24,7 @@ export const useCicadaSub = (pair?: string) => {
 
       const webSocket = new WebSocket(CICADA_WS_ENDPOINT);
       webSocket.onopen = () => {
+        console.log("Socket connection open")
         webSocket.send(JSON.stringify({ action: "subscribe", pair }));
         reconnectionTries = 0;
       };
@@ -49,6 +51,7 @@ export const useCicadaSub = (pair?: string) => {
       webSocket.onmessage = (event) => {
         try {
           const data = JSON.parse(event.data);
+          console.log("WS Message", data)
           if (!data.point) return;
           queryClient.setQueryData<CicadaSubscriptionData>(cicadaSubKey, {
             pair: data.currency,
